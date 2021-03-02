@@ -4,6 +4,23 @@ import { PythonShell } from 'python-shell';
 
 @Injectable()
 export class InferenceService {
+  // async runWithFile(input: Express.Multer.File): Promise<string> {
+  //   const options = {
+  //     scriptPath: 'src/inference/python-scripts/',
+  //     args: [input],
+  //   };
+  //   const data = await this.promRunScript('script-file.py', options);
+  //   return data[0];
+  // }
+  async runWithFileString(input: string): Promise<string> {
+    const options = {
+      scriptPath: 'src/inference/python-scripts/',
+      args: ['test.csv', input],
+    };
+    const data = await this.promRunScript('script-file-string.py', options);
+    return input;
+  }
+
   async test(): Promise<string> {
     this.testSync();
     this.testAsync();
