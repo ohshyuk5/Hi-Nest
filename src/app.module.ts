@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module';
 import * as Joi from 'joi';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { InferenceModule } from './inference/inference.module';
+import { UploadModule } from './upload/upload.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { InferenceModule } from './inference/inference.module';
     ChatModule,
     UserModule,
     InferenceModule,
+    UploadModule,
   ],
   controllers: [AppController],
   providers: [AppService],
