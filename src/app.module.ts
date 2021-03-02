@@ -6,6 +6,7 @@ import { ChatModule } from './chat/chat.module';
 import { UserModule } from './user/user.module';
 import * as Joi from 'joi';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { InferenceModule } from './inference/inference.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     }),
     ChatModule,
     UserModule,
+    InferenceModule,
   ],
   controllers: [AppController],
   providers: [AppService],
